@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharat Computer – Upgrade Your Tech Life</title>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){ emailjs.init({ publicKey: "YOUR_EMAILJS_PUBLIC_KEY" }); })();
+</script>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --secondary: #22c55e;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --accent: #f59e0b;
+    --text: #111827;
+    --text-muted: #6b7280;
+    --card-shadow: 0 4px 24px rgba(30,58,138,0.10);
+    --radius: 16px;
+    --font-main: 'Times New Roman', Times, serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── STICKY HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 64px;
+    box-shadow: 0 2px 16px rgba(30,58,138,0.18);
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+
+  nav { display: flex; gap: 32px; align-items: center; }
+  nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.5px;
+  }
+  nav a:hover { color: var(--accent); }
+
+  .cart-btn {
+    position: relative;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 22px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.3px;
+  }
+  .cart-btn:hover { background: #d97706; transform: scale(1.05); }
+  .cart-badge {
+    position: absolute;
+    top: -8px; right: -8px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center; justify-content: center;
+    font-weight: 700;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%);
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(34,197,94,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(245,158,11,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 60% 80%, rgba(255,255,255,0.05) 0%, transparent 40%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px;
+    animation: heroFadeIn 1s ease both;
+  }
+
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(245,158,11,0.18);
+    border: 1px solid rgba(245,158,11,0.4);
+    color: var(--accent);
+    border-radius: 30px;
+    padding: 5px 20px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 32px rgba(0,0,0,0.3);
+    letter-spacing: -1px;
+  }
+
+  .hero-content h1 span { color: var(--accent); }
+
+  .hero-tagline {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 40px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 42px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-main);
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.18s, box-shadow 0.2s;
+    box-shadow: 0 6px 28px rgba(245,158,11,0.4);
+    letter-spacing: 0.3px;
+  }
+  .btn-primary:hover { background: #d97706; transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 40px rgba(245,158,11,0.5); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50px;
+    padding: 14px 36px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-main);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; color: var(--white); }
+  .stat-num { font-size: 2rem; font-weight: 900; color: var(--accent); }
+  .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.65); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ── SECTION TITLES ── */
+  .section { padding: 72px 40px; }
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .section-title span { color: var(--accent); }
+  .section-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  /* ── PRODUCTS ── */
+  #products { background: var(--white); }
+
+  .carousel-wrapper { position: relative; }
+
+  .products-track-outer {
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+
+  .products-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    padding-bottom: 8px;
+  }
+
+  .product-card {
+    min-width: 240px;
+    max-width: 240px;
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    border: 1.5px solid #e5e7eb;
+    transition: transform 0.22s, box-shadow 0.22s;
+    display: flex;
+    flex-direction: column;
+    animation: cardFadeIn 0.5s ease both;
+  }
+  .product-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 16px 40px rgba(30,58,138,0.16); }
+
+  @keyframes cardFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  .product-img-wrap {
+    width: 100%; height: 170px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .product-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .product-card:hover .product-img-wrap img { transform: scale(1.07); }
+
+  .product-info { padding: 16px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+  .product-name { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .product-price { font-size: 1.15rem; font-weight: 800; color: var(--primary); margin-bottom: 14px; }
+  .product-price span { font-size: 0.8rem; font-weight: 400; color: var(--text-muted); text-decoration: line-through; margin-left: 6px; }
+
+  .add-to-cart {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: background 0.2s, transform 0.15s;
+    margin-top: auto;
+    letter-spacing: 0.3px;
+  }
+  .add-to-cart:hover { background: var(--accent); transform: scale(1.03); }
+  .add-to-cart.added { background: var(--secondary); }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    align-items: center;
+  }
+
+  .carousel-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px; height: 42px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-btn:hover { background: var(--accent); transform: scale(1.1); }
+
+  .carousel-dots { display: flex; gap: 8px; }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .dot.active { background: var(--primary); transform: scale(1.3); }
+
+  /* ── CART SIDEBAR ── */
+  #cart-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 2000;
+    animation: fadeIn 0.2s;
+  }
+  #cart-overlay.open { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  #cart-panel {
+    position: fixed;
+    top: 0; right: 0;
+    width: 380px;
+    max-width: 100vw;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: -8px 0 40px rgba(0,0,0,0.18);
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  #cart-panel.open { transform: translateX(0); }
+
+  .cart-header {
+    background: var(--primary);
+    color: white;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .close-cart {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s;
+  }
+  .close-cart:hover { transform: rotate(90deg); }
+
+  .cart-items { flex: 1; overflow-y: auto; padding: 20px; }
+  .cart-empty { text-align: center; color: var(--text-muted); margin-top: 60px; font-size: 1.1rem; font-style: italic; }
+
+  .cart-item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f5f9;
+    animation: cardFadeIn 0.3s ease;
+  }
+  .cart-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 10px; background: #f1f5f9; }
+  .cart-item-info { flex: 1; }
+  .cart-item-name { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+  .cart-item-price { font-size: 0.92rem; color: var(--primary); font-weight: 600; }
+
+  .remove-item {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .remove-item:hover { background: #fca5a5; }
+
+  .cart-footer {
+    padding: 20px 24px;
+    border-top: 2px solid #f1f5f9;
+    background: var(--bg);
+  }
+  .cart-total { font-size: 1.2rem; font-weight: 800; color: var(--primary); margin-bottom: 16px; }
+
+  .checkout-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 0;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: background 0.2s, transform 0.15s;
+  }
+  .checkout-btn:hover { background: #d97706; transform: scale(1.02); }
+
+  /* ── ORDER FORM ── */
+  #order { background: var(--bg); }
+
+  .order-wrapper {
+    max-width: 620px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 24px;
+    padding: 48px 44px;
+    box-shadow: var(--card-shadow);
+    border: 1.5px solid #e5e7eb;
+  }
+
+  .form-group { margin-bottom: 22px; }
+  .form-group label {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 13px 18px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    color: var(--text);
+    background: var(--bg);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30,58,138,0.10);
+  }
+  .form-group textarea { min-height: 90px; resize: vertical; }
+
+  .place-order-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+  }
+  .place-order-btn:hover { background: var(--accent); transform: translateY(-2px); }
+
+  #order-success {
+    display: none;
+    text-align: center;
+    padding: 36px 20px;
+  }
+  #order-success .success-icon {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    animation: bounceIn 0.5s;
+  }
+  @keyframes bounceIn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  #order-success h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--secondary);
+    margin-bottom: 10px;
+  }
+  #order-success p {
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  /* ── FEATURES STRIP ── */
+  #features {
+    background: var(--primary);
+    padding: 48px 40px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .feature-item { text-align: center; color: white; }
+  .feature-icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .feature-title { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .feature-desc { font-size: 0.85rem; color: rgba(255,255,255,0.65); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0f172a;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 48px 40px 32px;
+  }
+  .footer-logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-tagline {
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+  }
+  .footer-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 28px;
+    font-size: 1rem;
+  }
+  .footer-divider { border: none; border-top: 1px solid #1e293b; margin: 20px 0; }
+  .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+
+  /* ── FLOATING BUTTONS ── */
+  #whatsapp-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 56px; height: 56px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse 2.5s infinite;
+  }
+  #whatsapp-btn:hover { transform: scale(1.12); box-shadow: 0 8px 32px rgba(37,211,102,0.5); }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+  }
+
+  #scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px; height: 48px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 4px 16px rgba(30,58,138,0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.15s;
+  }
+  #scroll-top.visible { display: flex; }
+  #scroll-top:hover { background: var(--accent); transform: scale(1.1); }
+
+  /* ── TOAST ── */
+  #toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--secondary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    z-index: 3000;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    box-shadow: 0 6px 24px rgba(34,197,94,0.4);
+  }
+  #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    header { padding: 0 18px; }
+    nav { display: none; }
+    .section { padding: 52px 18px; }
+    #hero { min-height: 420px; }
+    .hero-content h1 { font-size: 2.4rem; }
+    .order-wrapper { padding: 28px 20px; }
+    #cart-panel { width: 100vw; }
+  }
+
+  .error-input { border-color: #ef4444 !important; }
+  .field-error { color: #ef4444; font-size: 0.78rem; margin-top: 4px; display: none; font-family: var(--font-main); }
+  .field-error.show { display: block; }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <a href="#hero" class="logo">Bharat<span>Computer</span></a>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#features">Why Us</a>
+    <a href="#order">Order</a>
+    <a href="mailto:bharatrautray14@gmail.com">Contact</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">
+    🛒 Cart
+    <span class="cart-badge" id="cart-count">0</span>
+  </button>
+</header>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">⚡ Best Tech Deals in India</div>
+    <h1>Bharat<span>Computer</span></h1>
+    <p class="hero-tagline">"Upgrade Your Tech Life"</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">🛍️ Shop Now</a>
+      <a href="#order" class="btn-outline">📦 Place Order</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
+      <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Happy Customers</div></div>
+      <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Rated Service</div></div>
+      <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section id="features">
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">🚚</div>
+      <div class="feature-title">Free Delivery</div>
+      <div class="feature-desc">On orders above ₹2,000</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-title">Secure Payments</div>
+      <div class="feature-desc">100% safe & encrypted</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🔧</div>
+      <div class="feature-title">Expert Support</div>
+      <div class="feature-desc">Tech help when you need it</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">↩️</div>
+      <div class="feature-title">Easy Returns</div>
+      <div class="feature-desc">7-day hassle-free return</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section id="products" class="section">
+  <div class="section-title">Our <span>Products</span></div>
+  <p class="section-sub">Top-quality tech at the best prices</p>
+
+  <div class="carousel-wrapper">
+    <div class="products-track-outer">
+      <div class="products-track" id="productsTrack">
+
+        <!-- Cards injected by JS -->
+
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="slideCarousel(-1)">&#8249;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" onclick="slideCarousel(1)">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── CART OVERLAY ── -->
+<div id="cart-overlay" onclick="closeCart()"></div>
+<div id="cart-panel">
+  <div class="cart-header">
+    <span>🛒 Your Cart</span>
+    <button class="close-cart" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Your cart is empty 🛍️</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total" id="cartTotal">Total: ₹0</div>
+    <button class="checkout-btn" onclick="scrollToOrder()">Proceed to Order →</button>
+  </div>
+</div>
+
+<!-- ── ORDER FORM ── -->
+<section id="order" class="section">
+  <div class="section-title">Place Your <span>Order</span></div>
+  <p class="section-sub">Fill in your details and we'll get it to you fast</p>
+
+  <div class="order-wrapper">
+    <div id="order-success">
+      <div class="success-icon">✅</div>
+      <h3>Order Placed Successfully!</h3>
+      <p>Thank you! Your order has been received.<br>A confirmation will be sent to <strong>bharatrautray14@gmail.com</strong></p>
+    </div>
+
+    <form id="order-form" onsubmit="placeOrder(event)" novalidate>
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="fname" placeholder="Enter your full name" required>
+        <div class="field-error" id="fname-err">Please enter your name.</div>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number *</label>
+        <input type="tel" id="fmobile" placeholder="+91 00000 00000" required maxlength="13">
+        <div class="field-error" id="fmobile-err">Please enter a valid 10-digit number.</div>
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="femail" placeholder="you@example.com" required>
+        <div class="field-error" id="femail-err">Please enter a valid email.</div>
+      </div>
+      <div class="form-group">
+        <label>Delivery Address *</label>
+        <textarea id="faddress" placeholder="House no, Street, City, PIN code" required></textarea>
+        <div class="field-error" id="faddress-err">Please enter your delivery address.</div>
+      </div>
+      <button type="submit" class="place-order-btn">📦 Place Order</button>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Bharat<span>Computer</span></div>
+  <div class="footer-tagline">"Upgrade Your Tech Life"</div>
+  <a href="mailto:bharatrautray14@gmail.com" class="footer-email">✉️ bharatrautray14@gmail.com</a>
+  <hr class="footer-divider">
+  <div class="footer-copy">© 2025 Bharat Computer. All rights reserved.</div>
+</footer>
+
+<!-- ── FLOATING BUTTONS ── -->
+<a id="whatsapp-btn" href="https://wa.me/91" target="_blank" title="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.112 1.531 5.838L.057 23.998l6.306-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.944 0-3.772-.523-5.345-1.434l-.383-.228-3.741.982.997-3.648-.249-.394A9.954 9.954 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">▲</button>
+<div id="toast">✅ Added to Cart!</div>
+
+<script>
+/* ═══════════════ DATA ═══════════════ */
+const products = [
+  { name: "Dell Inspiron Laptop", price: 45999, oldPrice: 55000, emoji: "💻",
+    img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=300&fit=crop" },
+  { name: "HP Wireless Mouse", price: 799, oldPrice: 1299, emoji: "🖱️",
+    img: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=300&fit=crop" },
+  { name: "Mechanical Keyboard", price: 3499, oldPrice: 4999, emoji: "⌨️",
+    img: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=300&fit=crop" },
+  { name: "27\" Full HD Monitor", price: 14999, oldPrice: 19999, emoji: "🖥️",
+    img: "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=400&h=300&fit=crop" },
+  { name: "USB-C Hub 7-in-1", price: 1299, oldPrice: 1999, emoji: "🔌",
+    img: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=400&h=300&fit=crop" },
+  { name: "Gaming Headset Pro", price: 4299, oldPrice: 5999, emoji: "🎧",
+    img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" },
+  { name: "1TB SSD Drive", price: 5999, oldPrice: 7999, emoji: "💾",
+    img: "https://images.unsplash.com/photo-1548092372-0d1bd40894a3?w=400&h=300&fit=crop" },
+  { name: "Webcam HD 1080p", price: 2499, oldPrice: 3499, emoji: "📷",
+    img: "https://images.unsplash.com/photo-1617329638944-caa3cba2f2dd?w=400&h=300&fit=crop" },
+  { name: "Laptop Stand Aluminium", price: 1799, oldPrice: 2599, emoji: "🏗️",
+    img: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&h=300&fit=crop" },
+  { name: "WiFi 6 Router", price: 6499, oldPrice: 8999, emoji: "📡",
+    img: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop" },
+];
+
+/* ═══════════════ CART ═══════════════ */
+let cart = [];
+
+function fmt(n) { return "₹" + n.toLocaleString('en-IN'); }
+
+function addToCart(idx, btn) {
+  const p = products[idx];
+  cart.push({ ...p, uid: Date.now() });
+  updateCartUI();
+  showToast("✅ " + p.name + " added!");
+  btn.textContent = "✔ Added";
+  btn.classList.add("added");
+  setTimeout(() => { btn.textContent = "Add to Cart"; btn.classList.remove("added"); }, 1500);
+}
+
+function removeFromCart(uid) {
+  cart = cart.filter(i => i.uid !== uid);
+  updateCartUI();
+}
+
+function updateCartUI() {
+  document.getElementById('cart-count').textContent = cart.length;
+  const itemsEl = document.getElementById('cartItems');
+  const totalEl = document.getElementById('cartTotal');
+
+  if (cart.length === 0) {
+    itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty 🛍️</p>';
+    totalEl.textContent = 'Total: ₹0';
+    return;
+  }
+
+  let total = 0;
+  itemsEl.innerHTML = cart.map(item => {
+    total += item.price;
+    return `<div class="cart-item">
+      <img src="${item.img}" alt="${item.name}" onerror="this.style.display='none'">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${fmt(item.price)}</div>
+      </div>
+      <button class="remove-item" onclick="removeFromCart(${item.uid})">✕</button>
+    </div>`;
+  }).join('');
+
+  totalEl.textContent = 'Total: ' + fmt(total);
+}
+
+function openCart() {
+  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-panel').classList.add('open');
+}
+function closeCart() {
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.getElementById('cart-panel').classList.remove('open');
+}
+function scrollToOrder() {
+  closeCart();
+  document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ═══════════════ CAROUSEL ═══════════════ */
+let currentSlide = 0;
+let autoSlideTimer;
+const VISIBLE = () => window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : window.innerWidth < 1200 ? 3 : 4;
+
+function buildProducts() {
+  const track = document.getElementById('productsTrack');
+  track.innerHTML = products.map((p, i) => `
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="${p.img}" alt="${p.name}" loading="lazy"
+             onerror="this.parentElement.innerHTML='<div style=font-size:3rem;padding:30px>${p.emoji}</div>'">
+      </div>
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-price">${fmt(p.price)} <span>${fmt(p.oldPrice)}</span></div>
+        <button class="add-to-cart" onclick="addToCart(${i}, this)">Add to Cart</button>
+      </div>
+    </div>
+  `).join('');
+
+  buildDots();
+}
+
+function buildDots() {
+  const v = VISIBLE();
+  const total = Math.ceil(products.length / v);
+  const dots = document.getElementById('carouselDots');
+  dots.innerHTML = Array.from({ length: total }, (_, i) =>
+    `<div class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>`
+  ).join('');
+}
+
+function goToSlide(n) {
+  const v = VISIBLE();
+  const max = Math.ceil(products.length / v) - 1;
+  currentSlide = Math.max(0, Math.min(n, max));
+  const cardW = 240 + 24;
+  document.getElementById('productsTrack').style.transform = `translateX(-${currentSlide * v * cardW}px)`;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+}
+
+function slideCarousel(dir) {
+  const v = VISIBLE();
+  const max = Math.ceil(products.length / v) - 1;
+  goToSlide(currentSlide + dir);
+  if (currentSlide >= max) currentSlide = -1 + dir;
+  resetAutoSlide();
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlideTimer);
+  autoSlideTimer = setInterval(() => slideCarousel(1), 3500);
+}
+
+/* ═══════════════ ORDER FORM ═══════════════ */
+async function placeOrder(e) {
+  e.preventDefault();
+  let valid = true;
+
+  const fields = [
+    { id: 'fname',    errId: 'fname-err',    check: v => v.trim().length > 1 },
+    { id: 'fmobile',  errId: 'fmobile-err',  check: v => /^[6-9]\d{9}$/.test(v.replace(/\D/g,'')) },
+    { id: 'femail',   errId: 'femail-err',   check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    { id: 'faddress', errId: 'faddress-err', check: v => v.trim().length > 5 },
+  ];
+
+  fields.forEach(f => {
+    const el  = document.getElementById(f.id);
+    const err = document.getElementById(f.errId);
+    if (!f.check(el.value)) {
+      el.classList.add('error-input');
+      err.classList.add('show');
+      valid = false;
+    } else {
+      el.classList.remove('error-input');
+      err.classList.remove('show');
+    }
+  });
+
+  if (!valid) return;
+
+  /* Build cart summary text */
+  const cartSummary = cart.length
+    ? cart.map(i => `• ${i.name} — ${fmt(i.price)}`).join('\n')
+    : 'No items in cart (direct order enquiry)';
+
+  const total = cart.reduce((s, i) => s + i.price, 0);
+
+  const submitBtn = document.querySelector('.place-order-btn');
+  submitBtn.textContent = '⏳ Sending…';
+  submitBtn.disabled = true;
+
+  const templateParams = {
+    to_email:     'bharatrautray14@gmail.com',
+    customer_name:   document.getElementById('fname').value.trim(),
+    customer_mobile: document.getElementById('fmobile').value.trim(),
+    customer_email:  document.getElementById('femail').value.trim(),
+    customer_address:document.getElementById('faddress').value.trim(),
+    cart_items:      cartSummary,
+    order_total:     fmt(total),
+    order_date:      new Date().toLocaleString('en-IN'),
+  };
+
+  try {
+    /* ── Replace these three strings with your real EmailJS IDs ── */
+    await emailjs.send(
+      'YOUR_SERVICE_ID',    /* e.g. 'service_abc123'  */
+      'YOUR_TEMPLATE_ID',   /* e.g. 'template_xyz789' */
+      templateParams
+    );
+    showSuccess();
+  } catch (err) {
+    console.error('EmailJS error:', err);
+    submitBtn.textContent = '📦 Place Order';
+    submitBtn.disabled = false;
+    showToast('❌ Failed to send. Check EmailJS setup.');
+  }
+}
+
+function showSuccess() {
+  document.getElementById('order-form').style.display = 'none';
+  document.getElementById('order-success').style.display = 'block';
+  cart = [];
+  updateCartUI();
+}
+
+/* ═══════════════ TOAST ═══════════════ */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+/* ═══════════════ SCROLL TOP ═══════════════ */
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scroll-top');
+  btn.classList.toggle('visible', window.scrollY > 400);
+});
+
+/* ═══════════════ INIT ═══════════════ */
+buildProducts();
+resetAutoSlide();
+window.addEventListener('resize', () => { buildDots(); goToSlide(0); });
+</script>
+</body>
+</html>
